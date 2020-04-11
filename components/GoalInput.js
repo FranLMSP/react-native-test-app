@@ -16,7 +16,7 @@ const GoalInput = props => {
     <Modal visible={props.visible} animationType="slide">
       <View style={ styles.inputContainer } >
         <TextInput
-          placeholder="Type something"
+          placeholder="Type your goal"
           style={ styles.input }
           onChangeText={ goalInputHandler }
           value={ enteredGoal }

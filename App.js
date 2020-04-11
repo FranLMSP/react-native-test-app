@@ -3,7 +3,8 @@ import {
   StyleSheet,
   View,
   Button,
-  FlatList
+  FlatList,
+  ToastAndroid
 } from 'react-native';
 
 import GoalItem from './components/GoalItem'
@@ -14,6 +15,11 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false)
 
   const addGoalHandler = goalTitle => {
+    if(!goalTitle) {
+       ToastAndroid.show("You must type a goal!", ToastAndroid.SHORT, ToastAndroid.BOTTOM);
+      return
+    }
+
     setCourseGoals(currentGoals =>
       [...courseGoals, {
         uid: Math.random().toString(),
